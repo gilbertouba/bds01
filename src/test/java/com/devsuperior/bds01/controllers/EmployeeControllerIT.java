@@ -32,7 +32,7 @@ public class EmployeeControllerIT {
 	public void findAllShouldReturnPagedResourcesSortedByName() throws Exception {
 		
 		ResultActions result =
-				mockMvc.perform(get("/employees")
+				mockMvc.perform(get("/employees?page=0&size=12&sort=name,asc")
 					.contentType(MediaType.APPLICATION_JSON));
 
 		result.andExpect(status().isOk());
